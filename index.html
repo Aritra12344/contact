@@ -55,6 +55,7 @@
     const user = userCredential.user;
     // ...
 console.log("created");
+alert("registered succesfully");
   })
   .catch((error) => {
     const errorCode = error.code;
@@ -77,7 +78,7 @@ console.log( errorCode + errorMessage );
     const user = userCredential.user;
     // ...
 alert("loged succesfully");
-window.location.replace("http://www.w3schools.com");
+
   })
   .catch((error) => {
     const errorCode = error.code;
