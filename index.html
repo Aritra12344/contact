@@ -6,6 +6,9 @@
 				
 </head>
 <body>
+				<div id="detail"></div>
+				<br><br>
+				
 				<input type="email" id="email">
 				<input type="password" id="password">
 				<button id="signup"> sign up</button>
@@ -19,7 +22,7 @@
 				<script type="module">
   // Import the functions you need from the SDKs you need
   import { initializeApp } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-app.js";
-  import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword  } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-auth.js";
+  import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged  } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-auth.js";
 
   // TODO: Add SDKs for Firebase products that you want to use
   // https://firebase.google.com/docs/web/setup#available-libraries
@@ -82,8 +85,31 @@ window.location.replace("http://www.w3schools.com");
 console.log( errorCode + errorMessage );
  
   });
+
+
+
  				
  })
+ 
+ 
+ 
+
+onAuthStateChanged(auth, (user) => {
+  if (user) {
+    // User is signed in, see docs for a list of available properties
+const  detail = document.getElementById("detail");
+const html = "<div>signed as ${user.email} </div>"
+detail.innerHTML =html;
+
+console.log(user);
+    // https://firebase.google.com/docs/reference/js/firebase.User
+    const uid = user.uid;
+    // ...
+  } else {
+    // User is signed out
+    // ...
+  }
+});
  
 </script>
 </body>
