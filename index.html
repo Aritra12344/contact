@@ -43,11 +43,11 @@
   const firebaseConfig = {
     apiKey: "AIzaSyADWE2YrEMOmVa2qPiiii9qXKOrDmk4GcU",
     authDomain: "signing-6b3f4.firebaseapp.com",
+    databaseURL: "https://signing-6b3f4-default-rtdb.firebaseio.com",
     projectId: "signing-6b3f4",
     storageBucket: "signing-6b3f4.appspot.com",
     messagingSenderId: "948451056144",
-    appId: "1:948451056144:web:719f4be2a1981ca1460895"
-  };
+    appId: "1:948451056144:web:719f4be2a1981ca1460895"  };
 
   // Initialize Firebase
   const app = initializeApp(firebaseConfig);
@@ -139,13 +139,14 @@ console.log( errorCode + errorMessage );
  const name = document.getElementById("name").value;
  const number = document.getElementById("number").value;
  
-document.getElementById("save").addEventListener('click', function writeUserData(userId, name, number,) {
+document.getElementById("save").addEventListener('click', function writeUserData(name, number,) {
   const db = getDatabase();
-  set(ref(db, 'users/' + userId), {
-    username: name,
-    email: email,
+  set(ref(db, 'users/' + name), {
+    username: number,
+    Name: name,
     
   });
+alert("done");
 })
  
  
