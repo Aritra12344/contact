@@ -23,6 +23,7 @@
 				
 					<input type="text" id="name">
 				<input type="number" id="number">
+						<input type="number" id="roll">
 				<button id="save"> save</button>
 				<br><br>
 				
@@ -43,16 +44,16 @@
   const firebaseConfig = {
     apiKey: "AIzaSyADWE2YrEMOmVa2qPiiii9qXKOrDmk4GcU",
     authDomain: "signing-6b3f4.firebaseapp.com",
-    databaseURL: "https://signing-6b3f4-default-rtdb.firebaseio.com",
     projectId: "signing-6b3f4",
     storageBucket: "signing-6b3f4.appspot.com",
     messagingSenderId: "948451056144",
-    appId: "1:948451056144:web:719f4be2a1981ca1460895"  };
+    appId: "1:948451056144:web:719f4be2a1981ca1460895"
+  };
 
   // Initialize Firebase
   const app = initializeApp(firebaseConfig);
   const auth = getAuth(app);
-  const database = getDatabase(app);
+  const db = getDatabase(app);
   
   
  document.getElementById("signup").addEventListener('click', function(){
@@ -138,17 +139,25 @@ console.log( errorCode + errorMessage );
  
  const name = document.getElementById("name").value;
  const number = document.getElementById("number").value;
+  const roll = document.getElementById("roll").value;
  
-document.getElementById("save").addEventListener('click', function writeUserData(name, number,) {
-  const db = getDatabase();
+function writeUserData( name, number, roll) {
+  
   set(ref(db, 'users/' + name), {
-    username: number,
-    Name: name,
-    
+    username: name,
+    phone number: number,
+    roll no : roll
   });
-alert("done");
+.then(() => {
+ alert("Data saved successfully!");
 })
+.catch((error) => {
+  alert("The write failed...");
+});
+
+}
  
+ document.getElementById("save").addEventListener('click', writeUserData);
  
 </script>
 </body>
