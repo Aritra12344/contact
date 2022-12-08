@@ -99,8 +99,9 @@ onAuthStateChanged(auth, (user) => {
   if (user) {
     // User is signed in, see docs for a list of available properties
 const  detail = document.getElementById("detail");
-const html = "<div>signed as ${user.email} </div>"
-detail.innerHTML =html;
+const html = "<div>signed as</div>"
+const useremail = user.email;
+detail.innerHTML =html + useremail;
 
 console.log(user);
     // https://firebase.google.com/docs/reference/js/firebase.User
