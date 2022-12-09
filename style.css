@@ -1,0 +1,94 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@600&family=Josefin+Sans:wght@700&family=Nunito:wght@200;400;600;900&family=Raleway:ital,wght@1,600&display=swap');
+
+
+*{
+ margin: 0;
+ padding:0;
+box-sizing:  border-box;
+font-family: 'Josefin Sans', sans-serif;
+
+}
+
+body{
+				
+}
+
+#topnav{
+				background-color: #FED700 ;
+				color:  #2D3B48;
+				height: 75px;
+				width:  100%;
+				
+				display: flex;
+				flex-direction: row ;
+				box-shadow:  2px 2px 8px grey;
+				
+				
+}
+
+#topnav p{
+				font-size: 30px;  
+				font-family: 'Josefin Sans', sans-serif;
+				padding-top: 15px;
+				padding-left: 15px;
+}
+
+#topnav p, #topnav button{
+				display: flex;
+}
+
+
+#navbutton{
+				margin: 20px 0px 0px 15px ;
+}
+
+#navicon{
+				display:  flex;
+				justify-content:  flex-end;
+				width:  60%;
+	
+}
+
+#navicon i{
+				padding: 20px 20px 0px 20px;
+				font-size:   20px;
+				color:   black;
+				
+}
+
+
+
+
+
+
+
+@media screen and ( max-width: 768px), screen and(min-width: 460px){
+				
+				#topnav p{
+				font-size: 20px;  
+				font-family: 'Josefin Sans', sans-serif;
+				padding-top: 15px;
+				padding-left: 15px;
+}
+
+}
+
+
+@media screen and ( max-width: 460px){
+				
+				
+					#topnav p{
+				font-size: 15px;  
+				font-family: 'Josefin Sans', sans-serif;
+				padding-top: 15px;
+				padding-left: 15px;
+}
+
+      #navicon i{
+				padding: 20px 13px 0px 13px;
+				font-size:   13px;
+}
+
+
+}
