@@ -38,7 +38,7 @@
 				 
 <div class="offcanvas offcanvas-end" tabindex="-1" id="account" aria-labelledby="accountLabel"> <div class="offcanvas-header"> <h5 id="accountLabel">Offcanvas right</h5> <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button> </div> <div class="offcanvas-body"> 
 				
-		<div id="detail" ></div>
+		<div id="detail" > </div>
 				<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#signupModal"> Sign Up </button>
 <br>
 <br>
@@ -174,7 +174,9 @@ onAuthStateChanged(auth, (user) => {
     // ...
 const detail = document.getElementById("detail");
 const html = user.email;
- detail.innerHTML("<div> signed as" + html+"<div>");
+alert(html);
+ detail.innerHTML( html);
+
 
   } else {
     // User is signed out
