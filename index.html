@@ -172,10 +172,10 @@ onAuthStateChanged(auth, (user) => {
     // https://firebase.google.com/docs/reference/js/firebase.User
     const uid = user.uid;
     // ...
-const detail = document.getElementById("detail");
-const html = user.email;
-alert(html);
- detail.innerHTML( html);
+const  detail = document.getElementById("detail");
+const html = "<div>signed as</div>"
+const useremail = user.email;
+detail.innerHTML =html + useremail;
 
 
   } else {
